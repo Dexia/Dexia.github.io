@@ -85,28 +85,19 @@
 
 
 <meta name="description" content="将自己在阅读《javascript高级程序设计》一书的笔记记录下来
-第一章——第四章
-
-第五章 5.6基本包装类型引用类型与基本包装类型的主要区别就是对象的生存期。
-使用new操作符创建的引用类型的实例，会在代码离开当前作用域之前一直存在，而自动创建的基本包装类型的对象，则只存在于一行代码的执行瞬间，然后被销毁。123var s1 = &amp;quot;some  text&amp;quot;;s1.color">
+第一章——第四章">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript高级程序设计">
 <meta property="og:url" content="http://yoursite.com/2017/01/19/Javascript高级程序设计/index.html">
 <meta property="og:site_name" content="德坤">
 <meta property="og:description" content="将自己在阅读《javascript高级程序设计》一书的笔记记录下来
-第一章——第四章
-
-第五章 5.6基本包装类型引用类型与基本包装类型的主要区别就是对象的生存期。
-使用new操作符创建的引用类型的实例，会在代码离开当前作用域之前一直存在，而自动创建的基本包装类型的对象，则只存在于一行代码的执行瞬间，然后被销毁。123var s1 = &amp;quot;some  text&amp;quot;;s1.color">
+第一章——第四章">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2520536-ec115373e9729591.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-19T14:08:05.724Z">
+<meta property="og:updated_time" content="2017-03-19T15:08:32.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript高级程序设计">
 <meta name="twitter:description" content="将自己在阅读《javascript高级程序设计》一书的笔记记录下来
-第一章——第四章
-
-第五章 5.6基本包装类型引用类型与基本包装类型的主要区别就是对象的生存期。
-使用new操作符创建的引用类型的实例，会在代码离开当前作用域之前一直存在，而自动创建的基本包装类型的对象，则只存在于一行代码的执行瞬间，然后被销毁。123var s1 = &amp;quot;some  text&amp;quot;;s1.color">
+第一章——第四章">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2520536-ec115373e9729591.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -328,7 +319,7 @@
       
         <p>将自己在阅读《javascript高级程序设计》一书的笔记记录下来</p>
 <p><strong>第一章——第四章</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2520536-ec115373e9729591.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载.jpg"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2520536-ec115373e9729591.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载.jpg"><br><a id="more"></a></p>
 <h1 id="第五章"><a href="#第五章" class="headerlink" title="第五章 "></a>第五章 </h1><p><strong>5.6基本包装类型</strong><br><em>引用类型与基本包装类型的主要区别就是对象的生存期。</em></p>
 <p>使用new操作符创建的引用类型的实例，会在代码离开当前作用域之前一直存在，而自动创建的基本包装类型的对象，则只存在于一行代码的执行瞬间，然后被销毁。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var s1 = &quot;some  text&quot;;</div><div class="line">s1.color = &quot;red&quot;;</div><div class="line">alert(s1.color);      //代码返回undefined</div></pre></td></tr></table></figure></p>
 <p>第二行代码试图为s1添加一个color属性，但是当代码执行到第三行时，第二行创建的string对象已经被销毁了。所以当调用s1实例时，会返回undefined</p>
