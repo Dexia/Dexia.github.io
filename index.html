@@ -873,83 +873,12 @@ hexo d -g</code></p>
 
       
         
-          
-            <p>今天做到了 <a href="https://www.freecodecamp.cn/challenges/reverse-a-string" target="_blank" rel="external">Freecodecamp</a>上面的第一个算法题，虽然很基础，但还是记一下自己用的知识<br><em>每一道算法题都跟你罗列了需要用的知识，仔细查看很有用的</em></p>
-<blockquote>
-<p>翻转字符串先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。你的结果必须得是一个字符串</p>
-</blockquote>
-<p>根据题目要求大概知道需要用到三个知识 </p>
-<ul>
-<li>字符串转换数组——（用到的是split切割方法）</li>
-<li>翻转数组顺序——（需要用到reverse方法）</li>
-<li>将数组转换为字符串——（需要用到join方法）</li>
-</ul>
-<blockquote>
-<p>可以将平时刷题觉得重要指示储存在印象笔记中</p>
-</blockquote>
-<p>最终实现代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function reverseString(str) &#123;</div><div class="line">  var arr = str.split(&quot;&quot;);</div><div class="line">  arr =  arr.reverse();</div><div class="line">  arr = arr.join(&quot;&quot;);</div><div class="line">  return arr;</div><div class="line">&#125;</div><div class="line">reverseString(&quot;hello&quot;);</div></pre></td></tr></table></figure></p>
-<hr>
-<p><strong>Factorialize a Number</strong><br>问题描述： <em>计算一个整数的阶乘如果用字母n来代表一个整数，阶乘代表着所有小于或等于n的整数的乘积</em><br>思路就是：</p>
-<ul>
-<li>定义一个函数</li>
-<li>使用for循环<br>最终实现代码如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function factorialize(num) &#123;</div><div class="line">  var number = 1;</div><div class="line">  for (var i = 1;i&lt;=num;i++) &#123;</div><div class="line">    number = number * i;</div><div class="line">  &#125;</div><div class="line">  return number;</div><div class="line">&#125;</div><div class="line">factorialize(5);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>Find the Longest Word in a String</strong></p>
-<blockquote>
-<p>找到提供的句子中最长的单词，并计算它的长度。函数的返回值应该是一个数字。<br><em>思路</em></p>
-<ul>
-<li>将字符串转换为数组</li>
-<li>计算数组的长度，利用for循环遍历数组</li>
-<li>只要遍历到数组最大的一个数组的长度 ，后面的肯定都小于</li>
-</ul>
-</blockquote>
-<p><em>代码实现如下</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function findLongestWord(str) &#123;</div><div class="line">  var arr = str.split(&quot; &quot;);//转换为数组</div><div class="line">  var num = 0;</div><div class="line">  for (var i = 0;i &lt; arr.length;i++) &#123; //遍历数组arr</div><div class="line">    if (arr[i].length &gt; num) &#123;  //</div><div class="line">      num = arr[i].length;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return num;</div><div class="line">&#125;</div><div class="line">findLongestWord(&quot;The quick brown fox jumped over the lazy dog&quot;);</div></pre></td></tr></table></figure></p>
-<p><strong>题目</strong></p>
-<p>确保字符串的每个单词首字母都大写，其余部分小写。</p>
-<p><strong>思路</strong></p>
-<blockquote>
-<p>将字符串小写并切割为数组，接着用replace方法返回替换掉的值，最终将数组合并为字符串</p>
-</blockquote>
-<p><strong>步骤</strong></p>
-<ul>
-<li>toLowerCase()表示将<strong>字符串</strong>转换为小写</li>
-<li>split() 是将<strong>字符串</strong>转换为数组</li>
-<li>charAt()是根据字符串中的下标取出相应的值</li>
-<li>replace()是将返回需要替换的值</li>
-<li>join()合并字符串</li>
-</ul>
-<p><strong>实现代码如下</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function titleCase(str) &#123;</div><div class="line">  var arr = str.toLowerCase().split(&quot; &quot;);</div><div class="line">  for (var i in arr) &#123;</div><div class="line">    arr[i] = arr[i].replace(arr[i].charAt(0),arr[i].charAt(0).toUpperCase());</div><div class="line">  &#125;</div><div class="line">  return arr.join(&quot; &quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">titleCase(&quot;I&apos;m a little tea pot&quot;);</div></pre></td></tr></table></figure></p>
-<p><strong>Title Case a Sentence</strong></p>
-<blockquote>
-<p>确保字符串的每个单词首字母都大写，其余部分小写。</p>
-</blockquote>
-<p><strong>思路</strong></p>
-<blockquote>
-<p>将字符串小写并切割为数组，接着用replace方法返回替换掉的值，最终将数组合并为字符串</p>
-</blockquote>
-<p><strong>步骤</strong></p>
-<ul>
-<li>toLowerCase()表示将<strong>字符串</strong>转换为小写</li>
-<li>split() 是将<strong>字符串</strong>转换为数组</li>
-<li>charAt()是根据字符串中的下标取出相应的值</li>
-<li>replace()是将返回需要替换的值</li>
-<li>join()合并字符串</li>
-</ul>
-<p><strong>实现代码如下</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function titleCase(str) &#123;</div><div class="line">  var arr = str.toLowerCase().split(&quot; &quot;);</div><div class="line">  for (var i in arr) &#123;</div><div class="line">    arr[i] = arr[i].replace(arr[i].charAt(0),arr[i].charAt(0).toUpperCase());</div><div class="line">  &#125;</div><div class="line">  return arr.join(&quot; &quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">titleCase(&quot;I&apos;m a little tea pot&quot;);</div></pre></td></tr></table></figure></p>
-<hr>
-<p><strong>Find the Longest Word in a String</strong></p>
-<blockquote>
-<p>找到提供的句子中最长的单词，并计算它的长度。函数的返回值应该是一个数字。<br><em>思路</em></p>
-<ul>
-<li>将字符串转换为数组</li>
-<li>计算数组的长度，利用for循环遍历数组</li>
-<li>只要遍历到数组最大的一个数组的长度 ，后面的肯定都小于</li>
-</ul>
-</blockquote>
-<p><em>代码实现如下</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function findLongestWord(str) &#123;</div><div class="line">  var arr = str.split(&quot; &quot;);//转换为数组</div><div class="line">  var num = 0;</div><div class="line">  for (var i = 0;i &lt; arr.length;i++) &#123; //遍历数组arr</div><div class="line">    if (arr[i].length &gt; num) &#123;  //</div><div class="line">      num = arr[i].length;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return num;</div><div class="line">&#125;</div><div class="line">findLongestWord(&quot;The quick brown fox jumped over the lazy dog&quot;);</div></pre></td></tr></table></figure></p>
-
-          
+          <p>本章为Freecodecamp初级算法<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/19/Freecodecamp初级算法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
