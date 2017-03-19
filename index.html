@@ -246,6 +246,152 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/19/Hexo迁移新电脑/" itemprop="url">
+                  Hexo迁移新电脑
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-19T22:05:42+08:00" content="2017-03-19">
+              2017-03-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/19/Hexo迁移新电脑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/19/Hexo迁移新电脑/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/19/Hexo迁移新电脑/" class="leancloud_visitors" data-flag-title="Hexo迁移新电脑">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>  几日前装备了Windows10和Ubuntu16.0双系统。渐渐习惯了Ubuntu，但是我的Hexo是配置在Windows10环境下更新博客很不方便（虽然在Windows上也没更过）。于是决定将Hexo迁移到Ubuntu上进行配置。<br>  上网搜索一番后，尝试了大多数方法均有各种各样的问题，期间甚至重装了一次Ubuntu系统，最终经过我的不懈努力，终于修炼成功。<br><img src="http://upload-images.jianshu.io/upload_images/2520536-67c794392e5cd936.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>真的是折磨人！！！</p>
+<p><strong>迁移步骤</strong><br>一.首先需要安装<strong>node.js</strong><br><code>wget https://nodejs.org/dist/v6.10.0/node-v6.10.0-linux-x64.tar.xz</code></p>
+<blockquote>
+<p>失败的也可以去<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js</a>官网手动下载</p>
+</blockquote>
+<p>1.解压<strong>node.js</strong><br><code>cd  安装的目录
+//这一步是为了防止出现 解压的时候提示你没有这个文件
+tar tar -zxf  node-v6.10.0-linux-x64.tar.xz</code></p>
+<p>2.添加环境变量<br><code>cd node-v6.10.0-linux-x64
+sudo cp -r bin/* /usr/local/bin/
+sudo cp -r lib/* /usr/local/lib/
+sudo cp -r include/* /usr/local/include/</code></p>
+<p>3.检查版本<br><code>node -v
+v 6.10.0</code><br><a href="https://linux.cn/article-5766-1.html" target="_blank" rel="external">其他安装Node.js的方法</a></p>
+<p>二 安装<strong>npm</strong><br> ubuntu系统可以直接使用<br><code>sudo apt install npm</code><br>三 安装git<br> ubuntu系统可以直接使用</p>
+<p>1.安装<br><code>sudo apt install git</code></p>
+<p>二.下载git并向<a href="https://github.com/" target="_blank" rel="external">Github</a>添加公钥<br> 具体方法可以点击<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000" target="_blank" rel="external">Git教程</a></p>
+<blockquote>
+<p>在打开.ssh目录中的公钥步骤时，你可以在终端使用vim打开id_rsa.pub文件，然后复制到github中即可</p>
+</blockquote>
+<p>三 安装<em>Hexo</em><br>  <em>也是最重要的一步，之前就是栽到这里了</em><br>  这一步经过我自身的试验，不要使用hexo官方的下载方式，而是在终端中直接使用</p>
+<p>1.本地新建一个文件夹<br><code>mkdir blog</code></p>
+<p>2.安装<em>Hexo</em><br><code>cd blog
+npm install hexo 
+npm install hexo 
+npm install hexo-deployer-git
+npm install hexo-server --save</code></p>
+<p>四 迁移配置文件<br> Hexo安装虽然简单,但是配置文件主题确实需要相当的折腾。所以我们可以将原系统Hexo中的 站点配置_config.yml，theme文件夹里面的主题，以及source里面自己写的博客文件.这些粘贴到新系统创建的文件夹中。<br> 到这一步，就是你所熟悉的Hexo命令操作了<br><code>hexo clean
+hexo d -g</code></p>
+<p>五。常见错误命令<br> 1.git提交的时候提示你输入账号，密码。你需要做<br><code>打开hexo中的.config.yml
+找到deploy配置
+修改 repoisity格式为 git@github.com</code><br><img src="http://upload-images.jianshu.io/upload_images/2520536-b98c4cd88acceb6b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>2.这一条针对的是绑定的域名<br> 通过我这个方法安装的<strong>Hexo</strong>是没有CNAMe文件的<br>你需要在source文件夹中新建一个CNAME文件，并将你的域名填入</p>
+<p>3.输入Hexo命令无效<br> 我遇到这个命令是这样解决的</p>
+<blockquote>
+<p>重启! 重启! 重启! 重启!</p>
+</blockquote>
+<p>       本篇完，谢谢阅读.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/18/dekun/" itemprop="url">
                   dekun
                 </a>
@@ -450,6 +596,601 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/19/Sublime-Text3/" itemprop="url">
+                  Sublime Text3
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-19T22:08:51+08:00" content="2017-02-19">
+              2017-02-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/19/Sublime-Text3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/19/Sublime-Text3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/19/Sublime-Text3/" class="leancloud_visitors" data-flag-title="Sublime Text3">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>写在前面</strong><br>之前自己在使用前端编程工具，一直用的<em>HBuilder</em>，对新手非常友好，而且是各方面都很完善，无奈笔记本不没装SSD，转换文件，启动速度是在太慢。最终转向了Sublime Text.，初次体验上手确实非常爽，然而快捷键有点多，有些不常用的想用了又要去搜索，索性全部记录下来。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2520536-1222be0453315a1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="B7FB.tmp.png"></p>
+<p><strong>关于sublime Text前端插件的问题可以参考以下地址</strong></p>
+<ul>
+<li><a href="http://www.cnblogs.com/hykun/p/sublimeText3.html" target="_blank" rel="external">黄映焜</a></li>
+<li><a href="http://www.css88.com/archives/5858" target="_blank" rel="external">Web前端开发</a></li>
+</ul>
+<p><strong>参考例子</strong><br><strong><a href="http://sublime.emptystack.net/" target="_blank" rel="external">一张图显示</a></strong><br><strong><a href="http://www.imooc.com/video/485" target="_blank" rel="external">慕课视频</a></strong><br>1.ctrl+shirt+enter 在当前上方添加一行</p>
+<p>2.（ul&gt;.item$*10{content}）+（ctrl+E）<br>    其中&gt; 号生成子元素 ， .(点)号代表class）$ 产生序号，{ }产生内容</p>
+<p>3.Ctrl+] 增加缩进 [ 减小缩进。<br>4.alt+f3 全选，可以选中一部分再选择所有有该部分的元素。如 &gt;&lt; 标签之间的两个符号</p>
+<p>5.ctrl+shift+v 保持缩进粘贴</p>
+<ul>
+<li>ctrl a:页面；</li>
+<li>ctrl l:行；</li>
+<li>ctrl d;单词；</li>
+<li>ctrl k ctrl d:跳过；</li>
+<li>ctrl 空格:向下添加一行；</li>
+<li>ctrl shift 空格:向上添加一行；</li>
+<li>alt F3:选中所有相同标签或句子；</li>
+<li>ctrl }/{：向后缩进/向前缩进；</li>
+<li>ctrl shift v:缩进式粘贴；</li>
+<li>ctrl z:返回；</li>
+<li>ctrl shift d:粘贴一行；</li>
+<li>ctrl shift k:删除一行；</li>
+<li>方向键:光标游动；</li>
+<li>ctrl E:快捷生成标签；</li>
+<li>ctrl j:化多行为一行</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/19/Javascript高级程序设计/" itemprop="url">
+                  Javascript高级程序设计
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-19T22:07:45+08:00" content="2017-01-19">
+              2017-01-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/19/Javascript高级程序设计/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/19/Javascript高级程序设计/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/19/Javascript高级程序设计/" class="leancloud_visitors" data-flag-title="Javascript高级程序设计">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>将自己在阅读《javascript高级程序设计》一书的笔记记录下来</p>
+<p><strong>第一章——第四章</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2520536-ec115373e9729591.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载.jpg"></p>
+<h1 id="第五章"><a href="#第五章" class="headerlink" title="第五章 "></a>第五章 </h1><p><strong>5.6基本包装类型</strong><br><em>引用类型与基本包装类型的主要区别就是对象的生存期。</em></p>
+<p>使用new操作符创建的引用类型的实例，会在代码离开当前作用域之前一直存在，而自动创建的基本包装类型的对象，则只存在于一行代码的执行瞬间，然后被销毁。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var s1 = &quot;some  text&quot;;</div><div class="line">s1.color = &quot;red&quot;;</div><div class="line">alert(s1.color);      //代码返回undefined</div></pre></td></tr></table></figure></p>
+<p>第二行代码试图为s1添加一个color属性，但是当代码执行到第三行时，第二行创建的string对象已经被销毁了。所以当调用s1实例时，会返回undefined</p>
+<p><em>需要注意使用new调用的函数，会被转换为所调用函数的类型</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var value = &quot;25&quot;;</div><div class="line">var number = Number(value);    //转型函数</div><div class="line">alert(typeof number);                  //&quot;number&quot;</div></pre></td></tr></table></figure></p>
+<p><em>直接调用同名的转型函数，则不会被转换</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var value = &quot;25&quot;</div><div class="line">var obj = new Number(value);         //构造函数</div><div class="line">alert(typeof obj)                                //&quot;object&quot;</div></pre></td></tr></table></figure></p>
+<p><strong>5.6.3 String类型</strong><br>三个基于字符串创建新字符串的方法</p>
+<ul>
+<li>slice(a,b);            a表示字符串开始位置，b表示字符串截至位置</li>
+<li>substr(a,b);          a表示字符串开始位置，b表示要返回的<strong>字符个数</strong></li>
+<li>substring(a,b);      a表示字符串开始位置，b表示字符串截至位置<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var stringValue  = &quot;hellow world&quot;;</div><div class="line">alert(stringValue.slice(3));    //&quot;lo world&quot;</div><div class="line">alert(stringValue.substr(3,7));   //&quot;lo worl&quot;</div><div class="line">alert(stringValue.substring(3,7));   //&quot;lo w&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果传入的a,b是负值</p>
+<ul>
+<li>slice(a,b);            将传入的负值与字符串的长度想加</li>
+<li>substr(a,b);         会将传入的a加上字符串的长度，(b)转换为0</li>
+<li>substring(a,b);      会将所有负值参数转换为0  （*如果转换后的值 a&gt;b则变成(b,a)）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var stringValue = &quot;hello world&quot;;</div><div class="line">alert(stringValue.slice(-3));              //&quot;red&quot; (11+-3=8)</div><div class="line">alert(stringValur.substring(-3));         //&quot;hello world&quot;</div><div class="line">alert(stringValue.substring(3,-1));         //&quot;hel&quot;     因为转换后3&gt;0 所以变为（0，3）</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/01/Javascript-Dom编程艺术/" itemprop="url">
+                  Javascript Dom编程艺术
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-01T22:12:09+08:00" content="2017-01-01">
+              2017-01-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/01/Javascript-Dom编程艺术/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/01/Javascript-Dom编程艺术/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/01/Javascript-Dom编程艺术/" class="leancloud_visitors" data-flag-title="Javascript Dom编程艺术">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>自己在看《javascript Dom编程艺术》，这本书真的非常有意思，对DOM的理解也很有帮助，现在自己将其中涉及的知识点做个笔记</p>
+</blockquote>
+<hr>
+<p> 元素节点： <ul> <p> 诸如此类                          文本节点：文本节点一般被包含在元素节点的内部               属性节点： class ，id,  title</p>
+<hr>
+<p><strong>获取元素</strong><br>1.getElementById(获取到具有Id属性的元素)<br>document.getElementById(“id”)</p>
+<p>2.getElementsByTagName(返回一个对象数组)<br>dodcument.getElemenstByTagName(“tag”)</p>
+<p>3.getElementByClassName(返回一个具有相同类名的的元素的数组)<br>document.getElementByClassName(“class”)</p>
+<blockquote>
+<p>/若有多个类名可用空格隔开/</p>
+</blockquote>
+<p><strong>获取和设置属性</strong><br>1.getAttribute(你查询的属性的名字)<br>object.getAttribute(“attribute”)</p>
+<p>2.setAttribute(修改属性节点的值)<br>object.setAttribute(“attribute”,”value”)</p>
+<blockquote>
+<p>/二者只能用于元素节点/</p>
+</blockquote>
+<p>1.childNodes(可以用来获取任意一个元素的所有子元素,返回数组)<br>element.ChildNodes</p>
+<blockquote>
+<p>/返回所有节点，包括空格之类/</p>
+</blockquote>
+<p>2.nodeType(对特定类型的节点进行处理)<br>node.nodeType</p>
+<ul>
+<li>元素节点的nodeType属性值是1</li>
+<li>属性节点的nodeType属性值是2</li>
+<li>文本节点的nodeType属性值是3</li>
+</ul>
+<p>3.nodeValue(改变一个文本节点)<br>node.nodeValue</p>
+<p>4.firstChild    lastChild</p>
+<p>1.createElement(添加节点)<br>document.createElement(nodeName)</p>
+<p>2.appendChild(插入节点)<br>parent.appendChild()</p>
+<p>3.creatTextNode(创建文本节点)<br>docuent.createTextNode(text)</p>
+<p><strong>DOM中的事件对象</strong></p>
+<ul>
+<li>type属性用于获取事件类型</li>
+<li>target属性用于获取事件目标</li>
+<li>stopPropagation()方法 用于阻止事件冒泡</li>
+<li>preventDefault()方法用于阻止s</li>
+</ul>
+</ul></p>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/19/Freecodecamp初级算法/" itemprop="url">
+                  Freecodecamp初级算法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-19T22:10:12+08:00" content="2016-10-19">
+              2016-10-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/19/Freecodecamp初级算法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/19/Freecodecamp初级算法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/19/Freecodecamp初级算法/" class="leancloud_visitors" data-flag-title="Freecodecamp初级算法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天做到了 <a href="https://www.freecodecamp.cn/challenges/reverse-a-string" target="_blank" rel="external">Freecodecamp</a>上面的第一个算法题，虽然很基础，但还是记一下自己用的知识<br><em>每一道算法题都跟你罗列了需要用的知识，仔细查看很有用的</em></p>
+<blockquote>
+<p>翻转字符串先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。你的结果必须得是一个字符串</p>
+</blockquote>
+<p>根据题目要求大概知道需要用到三个知识 </p>
+<ul>
+<li>字符串转换数组——（用到的是split切割方法）</li>
+<li>翻转数组顺序——（需要用到reverse方法）</li>
+<li>将数组转换为字符串——（需要用到join方法）</li>
+</ul>
+<blockquote>
+<p>可以将平时刷题觉得重要指示储存在印象笔记中</p>
+</blockquote>
+<p>最终实现代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function reverseString(str) &#123;</div><div class="line">  var arr = str.split(&quot;&quot;);</div><div class="line">  arr =  arr.reverse();</div><div class="line">  arr = arr.join(&quot;&quot;);</div><div class="line">  return arr;</div><div class="line">&#125;</div><div class="line">reverseString(&quot;hello&quot;);</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>Factorialize a Number</strong><br>问题描述： <em>计算一个整数的阶乘如果用字母n来代表一个整数，阶乘代表着所有小于或等于n的整数的乘积</em><br>思路就是：</p>
+<ul>
+<li>定义一个函数</li>
+<li>使用for循环<br>最终实现代码如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function factorialize(num) &#123;</div><div class="line">  var number = 1;</div><div class="line">  for (var i = 1;i&lt;=num;i++) &#123;</div><div class="line">    number = number * i;</div><div class="line">  &#125;</div><div class="line">  return number;</div><div class="line">&#125;</div><div class="line">factorialize(5);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>Find the Longest Word in a String</strong></p>
+<blockquote>
+<p>找到提供的句子中最长的单词，并计算它的长度。函数的返回值应该是一个数字。<br><em>思路</em></p>
+<ul>
+<li>将字符串转换为数组</li>
+<li>计算数组的长度，利用for循环遍历数组</li>
+<li>只要遍历到数组最大的一个数组的长度 ，后面的肯定都小于</li>
+</ul>
+</blockquote>
+<p><em>代码实现如下</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function findLongestWord(str) &#123;</div><div class="line">  var arr = str.split(&quot; &quot;);//转换为数组</div><div class="line">  var num = 0;</div><div class="line">  for (var i = 0;i &lt; arr.length;i++) &#123; //遍历数组arr</div><div class="line">    if (arr[i].length &gt; num) &#123;  //</div><div class="line">      num = arr[i].length;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return num;</div><div class="line">&#125;</div><div class="line">findLongestWord(&quot;The quick brown fox jumped over the lazy dog&quot;);</div></pre></td></tr></table></figure></p>
+<p><strong>题目</strong></p>
+<p>确保字符串的每个单词首字母都大写，其余部分小写。</p>
+<p><strong>思路</strong></p>
+<blockquote>
+<p>将字符串小写并切割为数组，接着用replace方法返回替换掉的值，最终将数组合并为字符串</p>
+</blockquote>
+<p><strong>步骤</strong></p>
+<ul>
+<li>toLowerCase()表示将<strong>字符串</strong>转换为小写</li>
+<li>split() 是将<strong>字符串</strong>转换为数组</li>
+<li>charAt()是根据字符串中的下标取出相应的值</li>
+<li>replace()是将返回需要替换的值</li>
+<li>join()合并字符串</li>
+</ul>
+<p><strong>实现代码如下</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function titleCase(str) &#123;</div><div class="line">  var arr = str.toLowerCase().split(&quot; &quot;);</div><div class="line">  for (var i in arr) &#123;</div><div class="line">    arr[i] = arr[i].replace(arr[i].charAt(0),arr[i].charAt(0).toUpperCase());</div><div class="line">  &#125;</div><div class="line">  return arr.join(&quot; &quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">titleCase(&quot;I&apos;m a little tea pot&quot;);</div></pre></td></tr></table></figure></p>
+<p><strong>Title Case a Sentence</strong></p>
+<blockquote>
+<p>确保字符串的每个单词首字母都大写，其余部分小写。</p>
+</blockquote>
+<p><strong>思路</strong></p>
+<blockquote>
+<p>将字符串小写并切割为数组，接着用replace方法返回替换掉的值，最终将数组合并为字符串</p>
+</blockquote>
+<p><strong>步骤</strong></p>
+<ul>
+<li>toLowerCase()表示将<strong>字符串</strong>转换为小写</li>
+<li>split() 是将<strong>字符串</strong>转换为数组</li>
+<li>charAt()是根据字符串中的下标取出相应的值</li>
+<li>replace()是将返回需要替换的值</li>
+<li>join()合并字符串</li>
+</ul>
+<p><strong>实现代码如下</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function titleCase(str) &#123;</div><div class="line">  var arr = str.toLowerCase().split(&quot; &quot;);</div><div class="line">  for (var i in arr) &#123;</div><div class="line">    arr[i] = arr[i].replace(arr[i].charAt(0),arr[i].charAt(0).toUpperCase());</div><div class="line">  &#125;</div><div class="line">  return arr.join(&quot; &quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">titleCase(&quot;I&apos;m a little tea pot&quot;);</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>Find the Longest Word in a String</strong></p>
+<blockquote>
+<p>找到提供的句子中最长的单词，并计算它的长度。函数的返回值应该是一个数字。<br><em>思路</em></p>
+<ul>
+<li>将字符串转换为数组</li>
+<li>计算数组的长度，利用for循环遍历数组</li>
+<li>只要遍历到数组最大的一个数组的长度 ，后面的肯定都小于</li>
+</ul>
+</blockquote>
+<p><em>代码实现如下</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function findLongestWord(str) &#123;</div><div class="line">  var arr = str.split(&quot; &quot;);//转换为数组</div><div class="line">  var num = 0;</div><div class="line">  for (var i = 0;i &lt; arr.length;i++) &#123; //遍历数组arr</div><div class="line">    if (arr[i].length &gt; num) &#123;  //</div><div class="line">      num = arr[i].length;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return num;</div><div class="line">&#125;</div><div class="line">findLongestWord(&quot;The quick brown fox jumped over the lazy dog&quot;);</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -491,7 +1232,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
