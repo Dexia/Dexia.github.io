@@ -256,6 +256,122 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/23/函数属性方法/" itemprop="url">
+                  函数属性方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-23T20:49:03+08:00" content="2017-03-23">
+              2017-03-23
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/23/函数属性方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/23/函数属性方法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/23/函数属性方法/" class="leancloud_visitors" data-flag-title="函数属性方法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>title: 函数属性方法<br>date: 2017-03-23 20:49:03</p>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>每个函数都包含两个属性：length和prototype.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function box(name,age) &#123;</div><div class="line">	alert(name + age);</div><div class="line">&#125;</div><div class="line">alert(box.length);</div></pre></td></tr></table></figure></p>
+<p> prototype是保存所有实例方法的真正所在，也就是原型。prototype 下有两个方法:apply()和 call(),每个函数都包含这两个非继承而来的方法。这两个方法的用途都在特定的作用域中调用函数,实际上等于设置函数体内 this 对象的值。</p>
+<p> <strong>apply</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function box(num1, num2) &#123;</div><div class="line">	return num1 + num2;</div><div class="line">	//原函数</div><div class="line">&#125;</div><div class="line">function sayBox(num1, num2) &#123;</div><div class="line">	return box.apply(this, [num1, num2]);       //this 表示作用域,这里是 window</div><div class="line">										    //[]表示 box 所需要的参数</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">function sayBox2(num1, num2) &#123;</div><div class="line">	return box.apply(this, arguments);         //arguments 对象表示 box 所需要的参数</div><div class="line">&#125;</div><div class="line">alert(sayBox(10,10));                            //20</div><div class="line">alert(sayBox2(10,10));                      //20</div></pre></td></tr></table></figure></p>
+<p><strong>call</strong></p>
+<p>call()方法于 apply()方法相同,他们的区别仅仅在于接收参数的方式不同。对于 call()方法而言,第一个参数是作用域,没有变化,变化只是其余的参数都是直接传递给函数的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function box(num1, num2) &#123;</div><div class="line">	return num1 + num2;</div><div class="line">&#125;</div><div class="line">function callBox(num1, num2) &#123;</div><div class="line">	return box.call(this, num1, num2);			//和 apply 区别在于后面的传参</div><div class="line">&#125;</div><div class="line"></div><div class="line">alert(callBox(10,10));</div><div class="line">事实上,传递参数并不是 apply()和 call()方法真正的用武之地;它们经常使用的地方是能够扩展函数赖以运行的作用域。</div><div class="line"></div><div class="line">var color = &apos;红色的&apos;;			//或者 window.color = &apos;红色的&apos;;也行</div><div class="line"></div><div class="line">var box = &#123;</div><div class="line">	color : &apos;蓝色的&apos;</div><div class="line">&#125;;</div><div class="line">function sayColor() &#123;</div><div class="line">	alert(this.color);</div><div class="line">&#125;</div><div class="line">sayColor(); 	//作用域在 window</div><div class="line">sayColor.call(this);			//作用域在 window</div><div class="line">sayColor.call(window);		//作用域在 window</div><div class="line">sayColor.call(box); 			//作用域在 box,对象冒充</div></pre></td></tr></table></figure></p>
+<p>总结<br>使用 call()或者 apply()来扩充作用域的最大好处,就是对象不需要与方法发生任何耦合关系(耦合,就是互相关联的意思,扩展和维护会发生连锁反应)。也就是说,box 对象和sayColor()方法之间不会有多余的关联操作,比如 box.sayColor = sayColor;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/19/Hexo迁移新电脑/" itemprop="url">
                   Hexo迁移新电脑
                 </a>
@@ -835,7 +951,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
