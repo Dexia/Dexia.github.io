@@ -92,7 +92,7 @@
 <meta property="og:description" content="几日前装备了Windows10和Ubuntu16.0双系统。渐渐习惯了Ubuntu，但是我的Hexo是配置在Windows10环境下更新博客很不方便（虽然在Windows上也没更过）。于是决定将Hexo迁移到Ubuntu上进行配置。  上网搜索一番后，尝试了大多数方法均有各种各样的问题，期间甚至重装了一次Ubuntu系统，最终经过我的不懈努力，终于修炼成功。真的是折磨人！！！">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2520536-67c794392e5cd936.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2520536-b98c4cd88acceb6b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-20T08:13:20.137Z">
+<meta property="og:updated_time" content="2017-03-24T01:31:48.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo迁移新电脑">
 <meta name="twitter:description" content="几日前装备了Windows10和Ubuntu16.0双系统。渐渐习惯了Ubuntu，但是我的Hexo是配置在Windows10环境下更新博客很不方便（虽然在Windows上也没更过）。于是决定将Hexo迁移到Ubuntu上进行配置。  上网搜索一番后，尝试了大多数方法均有各种各样的问题，期间甚至重装了一次Ubuntu系统，最终经过我的不懈努力，终于修炼成功。真的是折磨人！！！">
@@ -316,7 +316,8 @@
 
       
         <p>  几日前装备了Windows10和Ubuntu16.0双系统。渐渐习惯了Ubuntu，但是我的Hexo是配置在Windows10环境下更新博客很不方便（虽然在Windows上也没更过）。于是决定将Hexo迁移到Ubuntu上进行配置。<br>  上网搜索一番后，尝试了大多数方法均有各种各样的问题，期间甚至重装了一次Ubuntu系统，最终经过我的不懈努力，终于修炼成功。<br><img src="http://upload-images.jianshu.io/upload_images/2520536-67c794392e5cd936.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>真的是折磨人！！！<br><a id="more"></a></p>
-<p><strong>迁移步骤</strong><br>一.首先需要安装<strong>node.js</strong><br><code>wget https://nodejs.org/dist/v6.10.0/node-v6.10.0-linux-x64.tar.xz</code></p>
+<p><strong>迁移步骤</strong></p>
+<h1 id="一-首先需要安装node-js"><a href="#一-首先需要安装node-js" class="headerlink" title="一.首先需要安装node.js"></a>一.首先需要安装<strong>node.js</strong></h1><p><code>wget https://nodejs.org/dist/v6.10.0/node-v6.10.0-linux-x64.tar.xz</code></p>
 <blockquote>
 <p>失败的也可以去<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js</a>官网手动下载</p>
 </blockquote>
@@ -329,22 +330,23 @@ sudo cp -r lib/* /usr/local/lib/
 sudo cp -r include/* /usr/local/include/</code></p>
 <p>3.检查版本<br><code>node -v
 v 6.10.0</code><br><a href="https://linux.cn/article-5766-1.html" target="_blank" rel="external">其他安装Node.js的方法</a></p>
-<p>二 安装<strong>npm</strong><br> ubuntu系统可以直接使用<br><code>sudo apt install npm</code><br>三 安装git<br> ubuntu系统可以直接使用</p>
+<h1 id="二-安装npm"><a href="#二-安装npm" class="headerlink" title="二 安装npm"></a>二 安装<strong>npm</strong></h1><p> ubuntu系统可以直接使用<br><code>sudo apt install npm</code></p>
+<h1 id="三-安装git"><a href="#三-安装git" class="headerlink" title="三 安装git"></a>三 安装git</h1><p> ubuntu系统可以直接使用</p>
 <p>1.安装<br><code>sudo apt install git</code></p>
 <p>二.下载git并向<a href="https://github.com/" target="_blank" rel="external">Github</a>添加公钥<br> 具体方法可以点击<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000" target="_blank" rel="external">Git教程</a></p>
 <blockquote>
 <p>在打开.ssh目录中的公钥步骤时，你可以在终端使用vim打开id_rsa.pub文件，然后复制到github中即可</p>
 </blockquote>
-<p>三 安装<em>Hexo</em><br>  <em>也是最重要的一步，之前就是栽到这里了</em><br>  这一步经过我自身的试验，不要使用hexo官方的下载方式，而是在终端中直接使用</p>
+<h1 id="三-安装Hexo"><a href="#三-安装Hexo" class="headerlink" title="三 安装Hexo"></a>三 安装<em>Hexo</em></h1><p>  <em>也是最重要的一步，之前就是栽到这里了</em><br>  这一步经过我自身的试验，不要使用hexo官方的下载方式，而是在终端中直接使用</p>
 <p>1.本地新建一个文件夹<br><code>mkdir blog</code></p>
 <p>2.安装<em>Hexo</em><br><code>cd blog
 npm install hexo 
 npm install hexo 
 npm install hexo-deployer-git
 npm install hexo-server --save</code></p>
-<p>四 迁移配置文件<br> Hexo安装虽然简单,但是配置文件主题确实需要相当的折腾。所以我们可以将原系统Hexo中的 站点配置_config.yml，theme文件夹里面的主题，以及source里面自己写的博客文件.这些粘贴到新系统创建的文件夹中。<br> 到这一步，就是你所熟悉的Hexo命令操作了<br><code>hexo clean
+<h1 id="四-迁移配置文件"><a href="#四-迁移配置文件" class="headerlink" title="四 迁移配置文件"></a>四 迁移配置文件</h1><p> Hexo安装虽然简单,但是配置文件主题确实需要相当的折腾。所以我们可以将原系统Hexo中的 站点配置_config.yml，theme文件夹里面的主题，以及source里面自己写的博客文件.这些粘贴到新系统创建的文件夹中。<br> 到这一步，就是你所熟悉的Hexo命令操作了<br><code>hexo clean
 hexo d -g</code></p>
-<p>五。常见错误命令<br> 1.git提交的时候提示你输入账号，密码。你需要做<br><code>打开hexo中的.config.yml
+<h1 id="五。常见错误命令"><a href="#五。常见错误命令" class="headerlink" title="五。常见错误命令"></a>五。常见错误命令</h1><p> 1.git提交的时候提示你输入账号，密码。你需要做<br><code>打开hexo中的.config.yml
 找到deploy配置
 修改 repoisity格式为 git@github.com</code><br><img src="http://upload-images.jianshu.io/upload_images/2520536-b98c4cd88acceb6b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>2.这一条针对的是绑定的域名<br> 通过我这个方法安装的<strong>Hexo</strong>是没有CNAMe文件的<br>你需要在source文件夹中新建一个CNAME文件，并将你的域名填入</p>
@@ -559,7 +561,7 @@ hexo d -g</code></p>
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-首先需要安装node-js"><span class="nav-number">1.</span> <span class="nav-text">一.首先需要安装node.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-安装npm"><span class="nav-number">2.</span> <span class="nav-text">二 安装npm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-安装git"><span class="nav-number">3.</span> <span class="nav-text">三 安装git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-安装Hexo"><span class="nav-number">4.</span> <span class="nav-text">三 安装Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-迁移配置文件"><span class="nav-number">5.</span> <span class="nav-text">四 迁移配置文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五。常见错误命令"><span class="nav-number">6.</span> <span class="nav-text">五。常见错误命令</span></a></li></ol></div>
             
           </div>
         </section>

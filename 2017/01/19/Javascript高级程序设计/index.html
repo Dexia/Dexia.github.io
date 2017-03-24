@@ -93,7 +93,7 @@
 <meta property="og:description" content="将自己在阅读《javascript高级程序设计》一书的笔记记录下来
 第一章——第四章">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2520536-ec115373e9729591.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-20T08:20:12.454Z">
+<meta property="og:updated_time" content="2017-03-24T01:28:50.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript高级程序设计">
 <meta name="twitter:description" content="将自己在阅读《javascript高级程序设计》一书的笔记记录下来
@@ -325,7 +325,7 @@
 <p>第二行代码试图为s1添加一个color属性，但是当代码执行到第三行时，第二行创建的string对象已经被销毁了。所以当调用s1实例时，会返回undefined</p>
 <p><em>需要注意使用new调用的函数，会被转换为所调用函数的类型</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var value = &quot;25&quot;;</div><div class="line">var number = Number(value);    //转型函数</div><div class="line">alert(typeof number);                  //&quot;number&quot;</div></pre></td></tr></table></figure></p>
 <p><em>直接调用同名的转型函数，则不会被转换</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var value = &quot;25&quot;</div><div class="line">var obj = new Number(value);         //构造函数</div><div class="line">alert(typeof obj)                                //&quot;object&quot;</div></pre></td></tr></table></figure></p>
-<p><strong>5.6.3 String类型</strong><br>三个基于字符串创建新字符串的方法</p>
+<h1 id="5-6-3-String类型"><a href="#5-6-3-String类型" class="headerlink" title="5.6.3 String类型"></a>5.6.3 String类型</h1><p>三个基于字符串创建新字符串的方法</p>
 <ul>
 <li>slice(a,b);            a表示字符串开始位置，b表示字符串截至位置</li>
 <li>substr(a,b);          a表示字符串开始位置，b表示要返回的<strong>字符个数</strong></li>
@@ -549,7 +549,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章"><span class="nav-number">1.</span> <span class="nav-text">第五章 </span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章"><span class="nav-number">1.</span> <span class="nav-text">第五章 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-6-3-String类型"><span class="nav-number">2.</span> <span class="nav-text">5.6.3 String类型</span></a></li></ol></div>
             
           </div>
         </section>

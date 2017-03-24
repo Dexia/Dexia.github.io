@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/10/19/Freecodecamp初级算法/index.html">
 <meta property="og:site_name" content="德坤">
 <meta property="og:description" content="今天做到了 Freecodecamp上面的第一个算法题，虽然很基础，但还是记一下自己用的知识每一道算法题都跟你罗列了需要用的知识，仔细查看很有用的">
-<meta property="og:updated_time" content="2017-03-19T15:07:51.936Z">
+<meta property="og:updated_time" content="2017-03-24T01:30:54.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Freecodecamp初级算法">
 <meta name="twitter:description" content="今天做到了 Freecodecamp上面的第一个算法题，虽然很基础，但还是记一下自己用的知识每一道算法题都跟你罗列了需要用的知识，仔细查看很有用的">
@@ -326,15 +326,13 @@
 <p>可以将平时刷题觉得重要指示储存在印象笔记中</p>
 </blockquote>
 <p>最终实现代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function reverseString(str) &#123;</div><div class="line">  var arr = str.split(&quot;&quot;);</div><div class="line">  arr =  arr.reverse();</div><div class="line">  arr = arr.join(&quot;&quot;);</div><div class="line">  return arr;</div><div class="line">&#125;</div><div class="line">reverseString(&quot;hello&quot;);</div></pre></td></tr></table></figure></p>
-<hr>
-<p><strong>Factorialize a Number</strong><br>问题描述： <em>计算一个整数的阶乘如果用字母n来代表一个整数，阶乘代表着所有小于或等于n的整数的乘积</em><br>思路就是：</p>
+<h1 id="Factorialize-a-Number"><a href="#Factorialize-a-Number" class="headerlink" title="Factorialize a Number"></a>Factorialize a Number</h1><p>问题描述： <em>计算一个整数的阶乘如果用字母n来代表一个整数，阶乘代表着所有小于或等于n的整数的乘积</em><br>思路就是：</p>
 <ul>
 <li>定义一个函数</li>
 <li>使用for循环<br>最终实现代码如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function factorialize(num) &#123;</div><div class="line">  var number = 1;</div><div class="line">  for (var i = 1;i&lt;=num;i++) &#123;</div><div class="line">    number = number * i;</div><div class="line">  &#125;</div><div class="line">  return number;</div><div class="line">&#125;</div><div class="line">factorialize(5);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><strong>Find the Longest Word in a String</strong></p>
-<blockquote>
+<h1 id="Find-the-Longest-Word-in-a-String"><a href="#Find-the-Longest-Word-in-a-String" class="headerlink" title="Find the Longest Word in a String"></a>Find the Longest Word in a String</h1><blockquote>
 <p>找到提供的句子中最长的单词，并计算它的长度。函数的返回值应该是一个数字。<br><em>思路</em></p>
 <ul>
 <li>将字符串转换为数组</li>
@@ -343,8 +341,7 @@
 </ul>
 </blockquote>
 <p><em>代码实现如下</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function findLongestWord(str) &#123;</div><div class="line">  var arr = str.split(&quot; &quot;);//转换为数组</div><div class="line">  var num = 0;</div><div class="line">  for (var i = 0;i &lt; arr.length;i++) &#123; //遍历数组arr</div><div class="line">    if (arr[i].length &gt; num) &#123;  //</div><div class="line">      num = arr[i].length;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return num;</div><div class="line">&#125;</div><div class="line">findLongestWord(&quot;The quick brown fox jumped over the lazy dog&quot;);</div></pre></td></tr></table></figure></p>
-<p><strong>题目</strong></p>
-<p>确保字符串的每个单词首字母都大写，其余部分小写。</p>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>确保字符串的每个单词首字母都大写，其余部分小写。</p>
 <p><strong>思路</strong></p>
 <blockquote>
 <p>将字符串小写并切割为数组，接着用replace方法返回替换掉的值，最终将数组合并为字符串</p>
@@ -358,8 +355,7 @@
 <li>join()合并字符串</li>
 </ul>
 <p><strong>实现代码如下</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function titleCase(str) &#123;</div><div class="line">  var arr = str.toLowerCase().split(&quot; &quot;);</div><div class="line">  for (var i in arr) &#123;</div><div class="line">    arr[i] = arr[i].replace(arr[i].charAt(0),arr[i].charAt(0).toUpperCase());</div><div class="line">  &#125;</div><div class="line">  return arr.join(&quot; &quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">titleCase(&quot;I&apos;m a little tea pot&quot;);</div></pre></td></tr></table></figure></p>
-<p><strong>Title Case a Sentence</strong></p>
-<blockquote>
+<h1 id="Title-Case-a-Sentence"><a href="#Title-Case-a-Sentence" class="headerlink" title="Title Case a Sentence"></a>Title Case a Sentence</h1><blockquote>
 <p>确保字符串的每个单词首字母都大写，其余部分小写。</p>
 </blockquote>
 <p><strong>思路</strong></p>
@@ -375,9 +371,7 @@
 <li>join()合并字符串</li>
 </ul>
 <p><strong>实现代码如下</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function titleCase(str) &#123;</div><div class="line">  var arr = str.toLowerCase().split(&quot; &quot;);</div><div class="line">  for (var i in arr) &#123;</div><div class="line">    arr[i] = arr[i].replace(arr[i].charAt(0),arr[i].charAt(0).toUpperCase());</div><div class="line">  &#125;</div><div class="line">  return arr.join(&quot; &quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">titleCase(&quot;I&apos;m a little tea pot&quot;);</div></pre></td></tr></table></figure></p>
-<hr>
-<p><strong>Find the Longest Word in a String</strong></p>
-<blockquote>
+<h1 id="Find-the-Longest-Word-in-a-String-1"><a href="#Find-the-Longest-Word-in-a-String-1" class="headerlink" title="Find the Longest Word in a String"></a>Find the Longest Word in a String</h1><blockquote>
 <p>找到提供的句子中最长的单词，并计算它的长度。函数的返回值应该是一个数字。<br><em>思路</em></p>
 <ul>
 <li>将字符串转换为数组</li>
@@ -586,7 +580,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Factorialize-a-Number"><span class="nav-number">1.</span> <span class="nav-text">Factorialize a Number</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Find-the-Longest-Word-in-a-String"><span class="nav-number">2.</span> <span class="nav-text">Find the Longest Word in a String</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">3.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Title-Case-a-Sentence"><span class="nav-number">4.</span> <span class="nav-text">Title Case a Sentence</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Find-the-Longest-Word-in-a-String-1"><span class="nav-number">5.</span> <span class="nav-text">Find the Longest Word in a String</span></a></li></ol></div>
             
           </div>
         </section>
