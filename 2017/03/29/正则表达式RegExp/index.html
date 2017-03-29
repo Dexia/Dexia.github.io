@@ -85,25 +85,76 @@
 
 
 <meta name="description" content="正则表达式RegExp正则表达式在许多编程语言中都具有重要得作用，学会正则表达式对编程处理数据具有事半功倍得作用,遨游太空也不是不可能哎
+  正则表达式得模式修饰符
 
-正则表达式得模式修饰符
-参数 | 含义—- | —i | 忽略大小写g |  全局匹配m |  多行匹配">
+
+
+- 参数
+含义
+
+
+
+
+i
+忽略大小写
+
+
+g
+全局匹配
+
+
+m
+多行匹配">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式RegExp">
 <meta property="og:url" content="http://yoursite.com/2017/03/29/正则表达式RegExp/index.html">
 <meta property="og:site_name" content="德坤">
 <meta property="og:description" content="正则表达式RegExp正则表达式在许多编程语言中都具有重要得作用，学会正则表达式对编程处理数据具有事半功倍得作用,遨游太空也不是不可能哎
+  正则表达式得模式修饰符
 
-正则表达式得模式修饰符
-参数 | 含义—- | —i | 忽略大小写g |  全局匹配m |  多行匹配">
+
+
+- 参数
+含义
+
+
+
+
+i
+忽略大小写
+
+
+g
+全局匹配
+
+
+m
+多行匹配">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/005EqKPQgy1fe41100946j30go0afq5p.jpg">
-<meta property="og:updated_time" content="2017-03-29T13:26:02.711Z">
+<meta property="og:updated_time" content="2017-03-29T13:32:37.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式RegExp">
 <meta name="twitter:description" content="正则表达式RegExp正则表达式在许多编程语言中都具有重要得作用，学会正则表达式对编程处理数据具有事半功倍得作用,遨游太空也不是不可能哎
+  正则表达式得模式修饰符
 
-正则表达式得模式修饰符
-参数 | 含义—- | —i | 忽略大小写g |  全局匹配m |  多行匹配">
+
+
+- 参数
+含义
+
+
+
+
+i
+忽略大小写
+
+
+g
+全局匹配
+
+
+m
+多行匹配">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/005EqKPQgy1fe41100946j30go0afq5p.jpg">
 
 
@@ -324,14 +375,32 @@
 
       
         <h1 id="正则表达式RegExp"><a href="#正则表达式RegExp" class="headerlink" title="正则表达式RegExp"></a>正则表达式RegExp</h1><p>正则表达式在许多编程语言中都具有重要得作用，学会正则表达式对编程处理数据具有事半功倍得作用,遨游太空也不是不可能哎<br><img src="http://ww1.sinaimg.cn/large/005EqKPQgy1fe41100946j30go0afq5p.jpg" alt=""></p>
-<ul>
-<li>正则表达式得模式修饰符</li>
-<li>参数 | 含义<br>—- | —<br>i | 忽略大小写<br>g |  全局匹配<br>m |  多行匹配<a id="more"></a>
-</li>
-</ul>
-<p>1.两种创建方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var  box =   new RegExp(&quot;box&quot;,&quot;i&quot;);</div><div class="line">var box =   /box/i;</div></pre></td></tr></table></figure></p>
-<p>2.RegExp对象的方法</p>
+<p>  正则表达式得模式修饰符</p>
 <table>
+<thead>
+<tr>
+<th>- 参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>忽略大小写</td>
+</tr>
+<tr>
+<td>g</td>
+<td>全局匹配</td>
+</tr>
+<tr>
+<td>m</td>
+<td>多行匹配</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h1 id="1-两种创建方式"><a href="#1-两种创建方式" class="headerlink" title="1.两种创建方式"></a>1.<strong>两种创建方式</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var  box =   new RegExp(&quot;box&quot;,&quot;i&quot;);</div><div class="line">var box =   /box/i;</div></pre></td></tr></table></figure>
+<h1 id="2-RegExp对象的方法"><a href="#2-RegExp对象的方法" class="headerlink" title="2.RegExp对象的方法"></a>2.<strong>RegExp对象的方法</strong></h1><table>
 <thead>
 <tr>
 <th>- 方法</th>
@@ -373,8 +442,7 @@
 <p>使用 search 来查找匹配数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var pattern = /box/ig;</div><div class="line">var str = &apos;This is a Box!,That is a Box too&apos;;</div><div class="line">alert(str.search(pattern));</div></pre></td></tr></table></figure></p>
 <p>使用 replace 替换匹配到的数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var pattern = /box/ig;</div><div class="line">var str = &apos;This is a Box!,That is a Box too&apos;;</div><div class="line">alert(str.replace(pattern, &apos;Tom&apos;));   //将 Box 替换成了 Tom</div></pre></td></tr></table></figure></p>
 <p>使用 split 拆分成字符串数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var pattern = / /ig;</div><div class="line">var str = &apos;This is a Box!,That is a Box too&apos;;</div><div class="line">alert(str.split(pattern));    //将空格拆开分组成数组</div></pre></td></tr></table></figure></p>
-<p>字符类</p>
-<table>
+<h1 id="3-字符类"><a href="#3-字符类" class="headerlink" title="3.字符类"></a>3.<strong>字符类</strong></h1><table>
 <thead>
 <tr>
 <th>- 元字符/元符号</th>
@@ -535,7 +603,7 @@
 </tbody>
 </table>
 <p>使用点元字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var pattern = /g..gle/;</div><div class="line">var str = &apos;google&apos;;</div><div class="line">alert(pattern.test(str));</div></pre></td></tr></table></figure></p>
-<p>重复匹配<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var pattern = /g.*gle/;</div><div class="line">var str = &apos;google&apos;;</div><div class="line">alert(pattern.test(str));</div></pre></td></tr></table></figure></p>
+<h1 id="4-例子"><a href="#4-例子" class="headerlink" title="4.例子"></a>4.<strong>例子</strong></h1><p>重复匹配<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var pattern = /g.*gle/;</div><div class="line">var str = &apos;google&apos;;</div><div class="line">alert(pattern.test(str));</div></pre></td></tr></table></figure></p>
 <p>使用字符类匹配<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var pattern = /g[a-zA-Z_]*gle/;</div><div class="line">var str = &apos;google&apos;;</div><div class="line">alert(pattern.test(str));</div></pre></td></tr></table></figure></p>
 <p>使用锚元字符匹配<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var pattern = /^google$/;</div><div class="line">var str = &apos;google&apos;;</div><div class="line">alert(pattern.test(str));</div></pre></td></tr></table></figure></p>
 <p>/^从开头匹配,$从结尾开始匹配<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var pattern = /goo\sgle/;</div><div class="line">var str = &apos;goo gle&apos;;</div><div class="line">alert(pattern.test(str)); //\s 可以匹配到空格</div><div class="line">var pattern = /google\b/;</div><div class="line">var str = &apos;google&apos;;</div><div class="line">alert(pattern.test(str)); //\b 可以匹配是否到了边界</div></pre></td></tr></table></figure></p>
@@ -546,10 +614,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var pattern = /(.*)\s(.*)/;</div><div class="line">var str = &apos;google baidu&apos;;</div><div class="line">var result = str.replace(pattern, &apos;$2 $1&apos;);  //将两个分组的值替换输出</div><div class="line">document.write(result);</div></pre></td></tr></table></figure>
 <p>使用前瞻捕获<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var pattern = /(goo(?=gle))/;            //goo 后面必须跟着 gle 才能捕获</div><div class="line">var str = &apos;google&apos;;</div><div class="line">alert(pattern.exec(str));</div></pre></td></tr></table></figure></p>
 <p>使用分组嵌套<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var pattern = /(A?(B?(C?)))/;    //从外往内获取</div><div class="line">var str = &apos;ABC&apos;;</div><div class="line">alert(pattern.exec(str));  //abc,abc,bc,a</div></pre></td></tr></table></figure></p>
-<p>四.常用的正则<br>1.检查邮政编码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var pattern = /[1-9][0-9]&#123;5&#125;/;   //共 6 位数字,第一位不能为 0</div><div class="line">var str = &apos;224000&apos;;</div><div class="line">alert(pattern.test(str));</div></pre></td></tr></table></figure></p>
-<p>2.检查文件压缩包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var pattern = /[\w]+\.zip|rar|gz/;    //\w 表示所有数字和字母加下划线</div><div class="line">var str = &apos;123.zip&apos;;                 //\.表示匹配.,后面是一个选择</div><div class="line">alert(pattern.test(str));</div><div class="line">//\w 表示所有数字和字母加下划线</div><div class="line">//\.表示匹配.,后面是一个选择</div></pre></td></tr></table></figure></p>
-<p>3.删除多余空格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var pattern = /\s/g;</div><div class="line">var str = &apos;111 222 333&apos;;</div><div class="line">var result = str.replace(pattern,&apos;&apos;);  //把空格匹配成无空格</div><div class="line">alert(result);</div></pre></td></tr></table></figure></p>
-<p>4.删除首尾空格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var pattern = /^\s+/;         //强制首</div><div class="line">var str = &apos;goo gle &apos;</div><div class="line">var result = str.replace(pattern, &apos;&apos;);</div><div class="line">pattern = /\s+$/;            //强制尾</div><div class="line">result = result.replace(pattern, &apos;&apos;);</div><div class="line">alert(&apos;|&apos; + result + &apos;|&apos;);</div></pre></td></tr></table></figure></p>
+<h1 id="5-常用的正则"><a href="#5-常用的正则" class="headerlink" title="5.常用的正则"></a>5.<strong>常用的正则</strong></h1><p>5.1检查邮政编码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var pattern = /[1-9][0-9]&#123;5&#125;/;   //共 6 位数字,第一位不能为 0</div><div class="line">var str = &apos;224000&apos;;</div><div class="line">alert(pattern.test(str));</div></pre></td></tr></table></figure></p>
+<p>5.2检查文件压缩包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var pattern = /[\w]+\.zip|rar|gz/;    //\w 表示所有数字和字母加下划线</div><div class="line">var str = &apos;123.zip&apos;;                 //\.表示匹配.,后面是一个选择</div><div class="line">alert(pattern.test(str));</div><div class="line">//\w 表示所有数字和字母加下划线</div><div class="line">//\.表示匹配.,后面是一个选择</div></pre></td></tr></table></figure></p>
+<p>5.3删除多余空格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var pattern = /\s/g;</div><div class="line">var str = &apos;111 222 333&apos;;</div><div class="line">var result = str.replace(pattern,&apos;&apos;);  //把空格匹配成无空格</div><div class="line">alert(result);</div></pre></td></tr></table></figure></p>
+<p>4.4删除首尾空格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var pattern = /^\s+/;         //强制首</div><div class="line">var str = &apos;goo gle &apos;</div><div class="line">var result = str.replace(pattern, &apos;&apos;);</div><div class="line">pattern = /\s+$/;            //强制尾</div><div class="line">result = result.replace(pattern, &apos;&apos;);</div><div class="line">alert(&apos;|&apos; + result + &apos;|&apos;);</div></pre></td></tr></table></figure></p>
 <p>参考文档<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank" rel="external">javascriptMDN</a><br><a href="http://study.163.com/course/courseLearn.htm?courseId=252008#/learn/video?lessonId=361367&amp;courseId=252008" target="_blank" rel="external">李炎恢javascript高级教程</a></p>
 
       
@@ -757,7 +825,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式RegExp"><span class="nav-number">1.</span> <span class="nav-text">正则表达式RegExp</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式RegExp"><span class="nav-number">1.</span> <span class="nav-text">正则表达式RegExp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-两种创建方式"><span class="nav-number">2.</span> <span class="nav-text">1.两种创建方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-RegExp对象的方法"><span class="nav-number">3.</span> <span class="nav-text">2.RegExp对象的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-字符类"><span class="nav-number">4.</span> <span class="nav-text">3.字符类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-例子"><span class="nav-number">5.</span> <span class="nav-text">4.例子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-常用的正则"><span class="nav-number">6.</span> <span class="nav-text">5.常用的正则</span></a></li></ol></div>
             
           </div>
         </section>
